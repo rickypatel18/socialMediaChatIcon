@@ -1,8 +1,7 @@
-
 import { JSX } from "react";
 import FileUploadForm from "../components/FileUploadForm";
 import PostCard from "../components/PostCard";
-import { Post } from "../types"; // Adjust path if you created types/index.ts
+import { Post } from "../types"; 
 
 async function getPosts(): Promise<Post[]> {
   try {
@@ -19,7 +18,7 @@ async function getPosts(): Promise<Post[]> {
       );
       return [];
     }
-    return response.json() as Promise<Post[]>; // Type assertion for the response
+    return response.json() as Promise<Post[]>; 
   } catch (error) {
     console.error("Error in getPosts:", error);
     return [];
