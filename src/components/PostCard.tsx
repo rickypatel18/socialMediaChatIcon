@@ -38,9 +38,7 @@ const getFileTypeDisplayName = (extension: string | null): string => {
       return "Image File";
     default:
       // Handle cases where extension might already have a dot or not
-      const cleanExtension = extension.startsWith(".")
-        ? extension.substring(1)
-        : extension;
+      const cleanExtension = extension.startsWith(".") ? extension.substring(1) : extension;
       return `${cleanExtension.toUpperCase()} File`;
   }
 };
@@ -129,6 +127,7 @@ const SingleMediaDisplay = ({
           </div>
         </div>
       );
+
     case ".jpg":
     case ".jpeg":
     case ".png":
@@ -201,7 +200,7 @@ const SingleMediaDisplay = ({
           />
         </div>
       );
-    // Add case for .mp4, .mov, .avi (Videos)
+
     case ".mp4":
     case ".mov":
     case ".avi":
@@ -258,6 +257,7 @@ const SingleMediaDisplay = ({
           </video>
         </div>
       );
+
     default:
       return (
         <div style={commonStyle}>
